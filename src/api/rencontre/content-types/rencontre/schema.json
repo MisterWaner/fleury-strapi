@@ -1,0 +1,64 @@
+{
+  "kind": "collectionType",
+  "collectionName": "rencontres",
+  "info": {
+    "singularName": "rencontre",
+    "pluralName": "rencontres",
+    "displayName": "Rencontre"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "id_rencontre": {
+      "type": "string"
+    },
+    "journee": {
+      "type": "integer",
+      "required": true
+    },
+    "date": {
+      "type": "datetime",
+      "required": true
+    },
+    "lieu": {
+      "type": "enumeration",
+      "required": true,
+      "enum": [
+        "domicile",
+        "extérieur"
+      ]
+    },
+    "equipe_contre": {
+      "type": "string",
+      "required": true
+    },
+    "score_nous": {
+      "type": "integer",
+      "required": true,
+      "default": 0
+    },
+    "score_eux": {
+      "type": "integer",
+      "required": true,
+      "default": 0
+    },
+    "statut": {
+      "type": "enumeration",
+      "required": true,
+      "default": "à venir",
+      "enum": [
+        "victoire",
+        "défaite",
+        "forfait",
+        "à venir"
+      ]
+    },
+    "calendrier": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::calendrier.calendrier"
+    }
+  }
+}

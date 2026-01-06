@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "equipes",
+  "info": {
+    "singularName": "equipe",
+    "pluralName": "equipes",
+    "displayName": "Equipe"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nom": {
+      "type": "string",
+      "required": true
+    },
+    "calendrier": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::calendrier.calendrier"
+    }
+  }
+}
